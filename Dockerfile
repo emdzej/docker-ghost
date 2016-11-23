@@ -23,7 +23,7 @@ RUN chown -R ghost:ghost "$GHOST_HOME" &&  chown -R ghost:ghost "$GHOST_CONTENT"
 RUN rm /tmp/ghost.zip
 
 RUN cd "$GHOST_HOME" && npm install --production \
-	&& npm cache clean
+	&& npm cache clean \
 	&& rm -rf /tmp/npm*
 
 COPY config.js "$GHOST_HOME"
