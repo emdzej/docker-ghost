@@ -11,7 +11,7 @@ RUN adduser -H -h "$GHOST_HOME" -D -G ghost ghost
 RUN mkdir -p "$GHOST_HOME"
 RUN mkdir -p "$GHOST_CONTENT"
 
-RUN apk add --no-cache curl ca-certificates sudo
+RUN apk add --no-cache curl ca-certificates su-exec
 
 RUN cd /tmp && curl -s -L https://ghost.org/zip/ghost-latest.zip -o ghost.zip
 
